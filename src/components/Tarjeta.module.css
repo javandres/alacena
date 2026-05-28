@@ -1,0 +1,68 @@
+.tarjeta {
+  position: relative;
+  background: white;
+  border-radius: var(--radio-lg);
+  padding: 16px;
+  box-shadow: var(--sombra-tarjeta);
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+  min-width: 0;
+}
+
+.tarjeta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(74, 43, 20, 0.12);
+}
+
+.tarjeta img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: contain;
+  border-radius: var(--radio-md);
+  background: var(--crema);
+}
+
+.titulo {
+  font-family: var(--fuente-ui);
+  font-weight: 800;
+  font-size: 16px;
+  color: var(--marron);
+  margin: 0;
+}
+
+.subtitulo {
+  font-size: 13px;
+  color: var(--marron-suave);
+  margin: 0;
+}
+
+.bloqueada img,
+.bloqueada .titulo {
+  filter: grayscale(1);
+  opacity: 0.7;
+}
+
+.candado {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: var(--candado);
+  color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+
+.icono {
+  font-size: 48px;
+  line-height: 1;
+}
