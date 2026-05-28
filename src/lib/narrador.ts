@@ -52,7 +52,7 @@ export function detener(): void {
 }
 
 export function estadoActual(): EstadoNarrador {
-  if (!narradorDisponible() || !window.speechSynthesis.speaking) return 'idle'
+  if (!narradorDisponible() || !utteranceActual || !window.speechSynthesis.speaking) return 'idle'
   if (window.speechSynthesis.paused) return 'pausado'
   return 'hablando'
 }
