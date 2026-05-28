@@ -1,0 +1,32 @@
+:root {
+  /* Primarios */
+  --crema: #fff4dc;
+  --terracota: #c97b46;
+  --naranja: #ff9a3c;
+  --naranja-oscuro: #d97a1f;
+  --marron: #4a2b14;
+  --marron-suave: #6b4a2a;
+
+  /* Acentos */
+  --verde-hierba: #7fb069;
+  --amarillo: #ffd166;
+  --rosa-tibio: #e8a598;
+
+  /* Estados */
+  --gris-bloqueado: #d4cfc4;
+  --candado: #8a8580;
+
+  /* Tipografía */
+  --fuente-titulos: 'Fraunces', Georgia, serif;
+  --fuente-ui: 'Nunito', -apple-system, system-ui, sans-serif;
+
+  /* Sombras */
+  --sombra-tarjeta: 0 4px 12px rgba(74, 43, 20, 0.08);
+  --sombra-boton: 0 4px 0 var(--naranja-oscuro);
+
+  /* Radios */
+  --radio-sm: 8px;
+  --radio-md: 14px;
+  --radio-lg: 16px;
+  --radio-xl: 24px;
+}
