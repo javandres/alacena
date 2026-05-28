@@ -1,0 +1,43 @@
+.contenedor {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px;
+}
+
+.paso {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--gris-bloqueado);
+  color: var(--candado);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.activo {
+  background: var(--naranja);
+  color: white;
+  transform: scale(1.1);
+}
+
+.completado {
+  background: var(--terracota);
+  color: white;
+}
+
+.linea {
+  width: 24px;
+  height: 3px;
+  background: var(--gris-bloqueado);
+  border-radius: 2px;
+}
+
+.linea.completada {
+  background: var(--terracota);
+}
