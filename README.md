@@ -1,50 +1,30 @@
-# React + TypeScript + Vite
+# La Alacena
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Juego interactivo web (PWA) para fomentar la lectoescritura en niños de 6 a 12 años. El jugador elige un personaje, un lugar y una situación; la app genera un cuento original con estructura narrativa clásica (inicio, problema, intento y resolución). Incluye narración por voz, música ambiente y cuentos guardados en el dispositivo.
 
-Currently, two official plugins are available:
+Demo escolar para **K-Launch** — Unidad Educativa Kruger School, Cuenca.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Por:** Juliana García V
 
-## Expanding the ESLint configuration
+## Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+| Área | Tecnología |
+|------|------------|
+| UI | [React 18](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/) |
+| Build | [Vite 5](https://vitejs.dev/) |
+| Rutas | [React Router](https://reactrouter.com/) |
+| PWA / offline | [vite-plugin-pwa](https://vite-pwa-org.netlify.app/) (Workbox) |
+| Animaciones | [Framer Motion](https://www.framer.com/motion/) |
+| Audio | [Howler.js](https://howlerjs.com/) + Web Speech API (narrador) |
+| Persistencia | `localStorage` (sin backend) |
+| Tipografía | Google Fonts (Fraunces, Nunito) |
+| Tests | [Vitest](https://vitest.dev/) + Testing Library |
 
-- Configure the top-level `parserOptions` property like this:
+## Desarrollo
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```bash
+npm install
+npm run dev      # servidor local
+npm run build    # build de producción
+npm run test:run # tests
 ```
