@@ -1,10 +1,23 @@
-function App() {
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import { Splash } from './pantallas/Splash'
+import { Intro } from './pantallas/Intro'
+import { Menu } from './pantallas/Menu'
+import { CrearCuento } from './pantallas/CrearCuento'
+import { MisCuentos } from './pantallas/MisCuentos'
+import { Multiverso } from './pantallas/Multiverso'
+
+export default function App() {
   return (
-    <div style={{ padding: 40 }}>
-      <h1>La Alacena</h1>
-      <p>Demo en construcción</p>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Splash />} />
+        <Route path="/intro" element={<Intro />} />
+        <Route path="/menu" element={<Menu />} />
+        <Route path="/crear" element={<CrearCuento />} />
+        <Route path="/mis-cuentos" element={<MisCuentos />} />
+        <Route path="/multiverso" element={<Multiverso />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
-
-export default App
