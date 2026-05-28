@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(file docs/*.docx docs/*.xlsx docs/*.pdf)",
+      "Bash(unzip -p \"Opciones para app .xlsx\" xl/sharedStrings.xml)",
+      "Bash(grep -v '^$')",
+      "Read(//home/jag/.claude/plugins/cache/claude-plugins-official/superpowers/5.1.0/skills/brainstorming/**)",
+      "Bash(/home/jag/.claude/plugins/cache/claude-plugins-official/superpowers/5.1.0/skills/brainstorming/scripts/start-server.sh --project-dir /home/jag/dev/alacena)",
+      "Bash(ls /home/jag/.claude/plugins/cache/claude-plugins-official/superpowers/5.1.0/skills/subagent-driven-development/)",
+      "Read(//home/jag/.claude/plugins/cache/claude-plugins-official/superpowers/5.1.0/skills/subagent-driven-development/**)",
+      "Bash(npm create *)",
+      "Bash(npm --version)",
+      "Bash(find /home/jag/dev -name \"*.md\" -path \"*/alacena/*\" 2>/dev/null; find /tmp -name \"*alacena*\" 2>/dev/null)",
+      "Read(//home/jag/dev/**)",
+      "Bash(find /home/jag -name \"*.md\" 2>/dev/null | grep -v node_modules | grep -v \".git\" | head -30)",
+      "Read(//home/jag/**)",
+      "Bash(npm install *)",
+      "Bash(git init *)",
+      "Bash(git branch *)",
+      "Bash(git add *)",
+      "Bash(git commit *)"
+    ]
+  }
+}
