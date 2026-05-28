@@ -18,7 +18,28 @@
       "Bash(git init *)",
       "Bash(git branch *)",
       "Bash(git add *)",
-      "Bash(git commit *)"
+      "Bash(git commit *)",
+      "Bash(mkdir -p /home/jag/dev/alacena/docs/superpowers/specs /home/jag/dev/alacena/docs/superpowers/plans)",
+      "Bash(cp \"BUSINESS PLAN PROYECTO K-LAUNCH Juli García .docx\" \"Cocina\\(diseño app\\).jpg\" \"Cuentos de mis personajes.docx\" \"Diseño de la alacena .docx\" \"Documento sin título \\(1\\).docx\" \"Opciones para app .xlsx\" \"Personajes proyecto alacena.docx\" \"Programación de la app.docx\" \"alacena, estante listo.jpg\" \"manzanilla terminada.jpg\" \"pitch deck.pdf\" \"sal lista imagen.jpg\" \"Limon terminado.jpg\" \"Cebolla terminada.jpg\" /home/jag/dev/alacena/docs/)",
+      "Bash(npx tsc *)",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\(json.dumps\\(d.get\\('typesVersions', {}\\), indent=2\\)\\); print\\('exports:', json.dumps\\({k:v for k,v in d.get\\('exports',{}\\).items\\(\\) if 'config' in k or k=='.'}, indent=2\\)\\)\")",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\('version:', d.get\\('version'\\)\\); print\\('rolldown:', d.get\\('dependencies', {}\\).get\\('rolldown', 'not found'\\)\\)\")",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\('version:', d.get\\('version'\\)\\); deps = d.get\\('dependencies', {}\\); print\\('deps:', list\\(deps.keys\\(\\)\\)[:20]\\)\")",
+      "Bash(npm ls *)",
+      "Bash(npm info *)",
+      "Bash(python3 -c \"import json; d=json.load\\(open\\('/home/jag/dev/alacena/dist/manifest.webmanifest'\\)\\); print\\('name:', d.get\\('name'\\)\\); print\\('short_name:', d.get\\('short_name'\\)\\)\")",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\('vitest version:', d.get\\('version'\\)\\)\")",
+      "Bash(git -C /home/jag/dev/alacena status)",
+      "Bash(git -C /home/jag/dev/alacena log --oneline -5)",
+      "Bash(git -C /home/jag/dev/alacena add vite.config.ts src/test/setup.ts tsconfig.app.json tsconfig.node.json package.json package-lock.json)",
+      "Bash(git -C /home/jag/dev/alacena commit -m ' *)",
+      "Bash(git -C /home/jag/dev/alacena log -1 --stat)",
+      "Bash(echo \"Exit code: $?\")",
+      "Bash(git rm *)",
+      "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(json.dumps\\(d.get\\('exports',{}\\), indent=2\\)\\)\")",
+      "Bash(npm view *)",
+      "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\('version:', d.get\\('version'\\)\\); print\\(list\\(d.get\\('exports', {}\\).keys\\(\\)\\)[:5] if 'exports' in d else 'no exports'\\)\")",
+      "Bash(git -C /home/jag/dev/alacena add src/tipos/index.ts src/data/personajes.ts src/lib/generadorCuento.ts src/lib/generadorCuento.test.ts src/components/PersonajeAnimado.tsx src/components/CuentoDisplay.tsx src/components/CuentoDisplay.module.css src/pantallas/CrearCuento.tsx src/pantallas/Multiverso.tsx src/pantallas/MisCuentos.tsx src/components/FichaMultiverso.tsx)"
     ]
   }
 }
