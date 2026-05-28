@@ -1,0 +1,68 @@
+import type { Lugar } from '../tipos'
+
+export const lugares: Lugar[] = [
+  {
+    id: 'alacena',
+    nombre: 'La Alacena',
+    descripcion: 'la alacena de la abuela, con su olor a madera vieja y especias dormidas',
+    influencia: 'Entre los frascos amontonados, el silencio se volvió incómodo.',
+    imagen: '/lugares/alacena.jpg',
+    premium: false,
+  },
+  {
+    id: 'cocina',
+    nombre: 'La Cocina',
+    descripcion: 'la cocina iluminada por el sol de la tarde, con el agua del grifo cantando bajito',
+    influencia: 'El bullicio de la cocina amplificó cada pequeño temor.',
+    imagen: '/lugares/cocina.jpg',
+    premium: false,
+  },
+  {
+    id: 'huerto',
+    nombre: 'El Huerto',
+    descripcion: 'el huerto de la abuela, donde la tierra olía a hierba mojada y la luz se filtraba entre las hojas',
+    influencia: 'Mientras caminaba entre las matas, escuchó una vocecita pequeña.',
+    imagen: '/lugares/huerto.jpg',
+    premium: false,
+  },
+  {
+    id: 'refrigerador',
+    nombre: 'El Refrigerador',
+    descripcion: 'el refrigerador, con su luz blanca fría y el zumbido constante del motor',
+    influencia: 'En el frío del refrigerador, todo problema se sentía un poco más urgente.',
+    imagen: '/lugares/refrigerador.jpg',
+    premium: false,
+  },
+  {
+    id: 'microondas',
+    nombre: 'El Microondas',
+    descripcion: 'el microondas, con su luz amarillenta y su giro hipnótico',
+    influencia: 'El zumbido del microondas amenazaba con calentar más que la comida.',
+    imagen: '/lugares/microondas.jpg',
+    premium: true,
+  },
+  {
+    id: 'horno',
+    nombre: 'El Horno',
+    descripcion: 'el horno tibio, donde el aire mismo huele a pan recién hecho',
+    influencia: 'El calor del horno hizo que cada palabra pesara el doble.',
+    imagen: '/lugares/horno.jpg',
+    premium: true,
+  },
+  {
+    id: 'mesa-comedor',
+    nombre: 'La Mesa del Comedor',
+    descripcion: 'la mesa del comedor, vestida con el mantel que la abuela bordó hace años',
+    influencia: 'En medio de los platos, el conflicto se volvió visible para todos.',
+    imagen: '/lugares/mesa-comedor.jpg',
+    premium: true,
+  },
+  {
+    id: 'armario-limpieza',
+    nombre: 'El Armario de Limpieza',
+    descripcion: 'el armario de limpieza, donde habitan los productos más temibles de la casa',
+    influencia: 'Entre escobas y trapos, el peligro acechaba sin disimulo.',
+    imagen: '/lugares/armario-limpieza.jpg',
+    premium: true,
+  },
+]
