@@ -1,0 +1,31 @@
+.contenedor {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding: 40px 24px;
+  text-align: center;
+}
+
+.logo {
+  font-family: var(--fuente-titulos);
+  color: var(--terracota);
+  font-size: clamp(48px, 12vw, 80px);
+  font-weight: 900;
+  line-height: 0.9;
+  margin: 0;
+}
+
+.subtitulo {
+  font-size: 18px;
+  color: var(--marron-suave);
+  max-width: 320px;
+}
+
+.asterisco {
+  color: var(--terracota);
+  font-size: 32px;
+  opacity: 0.6;
+}
