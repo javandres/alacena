@@ -1,0 +1,58 @@
+.firma {
+  flex-shrink: 0;
+  padding: 20px 24px max(16px, env(safe-area-inset-bottom));
+  text-align: center;
+  width: 100%;
+}
+
+.ornamento {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.linea {
+  width: 36px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    color-mix(in srgb, var(--terracota) 55%, transparent),
+    transparent
+  );
+}
+
+.florecita {
+  font-size: 10px;
+  color: var(--terracota);
+  opacity: 0.65;
+  line-height: 1;
+}
+
+.texto {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+}
+
+.por {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--marron-suave);
+  opacity: 0.8;
+}
+
+.nombre {
+  font-family: var(--fuente-titulos);
+  font-size: 15px;
+  font-style: italic;
+  font-weight: 600;
+  color: var(--terracota);
+  letter-spacing: 0.02em;
+}

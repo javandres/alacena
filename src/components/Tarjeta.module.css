@@ -41,10 +41,13 @@
   margin: 0;
 }
 
-.bloqueada img,
+.bloqueada img {
+  filter: grayscale(0.5);
+  opacity: 0.85;
+}
+
 .bloqueada .titulo {
-  filter: grayscale(1);
-  opacity: 0.7;
+  opacity: 0.75;
 }
 
 .candado {
