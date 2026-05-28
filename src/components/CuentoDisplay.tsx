@@ -26,7 +26,7 @@ export function CuentoDisplay({ personaje, lugar, cuento, autoIniciarNarrador = 
     if (!narradorDisponible()) return
     if (pagina === 0 && !autoIniciarNarrador) return
     detener()
-    const t = setTimeout(() => hablar(cuento.actos[pagina]), 150)
+    const t = setTimeout(() => void hablar(cuento.actos[pagina]), 150)
     return () => {
       clearTimeout(t)
     }
