@@ -11,7 +11,7 @@ export const personajes: Personaje[] = [
       intento: 'decidió hacer lo que mejor hace: contar un chiste',
       reflexion: 'aprendió que reírse también es una forma de curar',
     },
-    imagen: '/personajes/limon.png',
+    poses: { inicio: '/personajes/limon/inicio.png', problema: '/personajes/limon/problema.png', intento: '/personajes/limon/intento.png', resolucion: '/personajes/limon/resolucion.png' },
     bio: {
       edad: 'Joven intrépido de 24 años',
       rol: 'Amigo del Vinagre y de Olea',
@@ -35,7 +35,7 @@ export const personajes: Personaje[] = [
       intento: 'analizó cada grieta del problema con su precisión matemática',
       reflexion: 'comprendió que el conocimiento solo sirve cuando se comparte',
     },
-    imagen: '/personajes/cebolla.png',
+    poses: { inicio: '/personajes/cebolla/inicio.png', problema: '/personajes/cebolla/problema.png', intento: '/personajes/cebolla/intento.png', resolucion: '/personajes/cebolla/resolucion.png' },
     bio: {
       edad: 'Se ve de 60 años por los lentes, pero está en su plenitud',
       rol: 'Estratega',
@@ -59,7 +59,7 @@ export const personajes: Personaje[] = [
       intento: 'escuchó con paciencia y ofreció lo único que sabe dar: cuidado',
       reflexion: 'recordó que cuidarse a una misma también es ayudar a los demás',
     },
-    imagen: '/personajes/manzanilla.png',
+    poses: { inicio: '/personajes/manzanilla/inicio.png', problema: '/personajes/manzanilla/problema.png', intento: '/personajes/manzanilla/intento.png', resolucion: '/personajes/manzanilla/resolucion.png' },
     bio: {
       edad: 'Joven en espíritu, aunque sus hojas secas revelan sabiduría ancestral',
       rol: 'Mediadora',
@@ -83,7 +83,7 @@ export const personajes: Personaje[] = [
       intento: 'delegó la decisión difícil porque le incomoda ensuciarse las manos',
       reflexion: 'sintió, por primera vez, una grieta diminuta en su certeza',
     },
-    imagen: '/personajes/sal.png',
+    poses: { inicio: '/personajes/sal/inicio.png', problema: '/personajes/sal/problema.png', intento: '/personajes/sal/intento.png', resolucion: '/personajes/sal/resolucion.png' },
     bio: {
       edad: '50 años',
       rol: 'Co-villana',
@@ -107,7 +107,7 @@ export const personajes: Personaje[] = [
       intento: 'no fingió, no suavizó, dijo la verdad sin filtro',
       reflexion: 'descubrió que la libertad es la única regla que vale la pena seguir',
     },
-    imagen: '/personajes/vinagre.png',
+    poses: { inicio: '/personajes/vinagre.png', problema: '/personajes/vinagre.png', intento: '/personajes/vinagre.png', resolucion: '/personajes/vinagre.png' },
     bio: {
       edad: 'Inmortal (tiene el elixir de la acidez)',
       rol: 'Héroe',
@@ -131,7 +131,7 @@ export const personajes: Personaje[] = [
       intento: 'orquestó cada movimiento desde las sombras, como hace siempre',
       reflexion: 'aceptó que su valentía vive en el pensamiento, no solo en la espada',
     },
-    imagen: '/personajes/olea.png',
+    poses: { inicio: '/personajes/olea.png', problema: '/personajes/olea.png', intento: '/personajes/olea.png', resolucion: '/personajes/olea.png' },
     bio: {
       edad: 'Muchos años (sin fecha de caducidad)',
       rol: 'Estratega y amante del Vinagre',
@@ -155,7 +155,7 @@ export const personajes: Personaje[] = [
       intento: 'intentó adoptar el problema como si fuera un hijo descarriado',
       reflexion: 'descubrió que el cuidado sin permiso también es un tipo de control',
     },
-    imagen: '/personajes/azucar.png',
+    poses: { inicio: '/personajes/azucar.png', problema: '/personajes/azucar.png', intento: '/personajes/azucar.png', resolucion: '/personajes/azucar.png' },
     bio: {
       edad: 'Vieja pero intenta mostrarse jovial',
       rol: 'Co-villana',
@@ -179,7 +179,7 @@ export const personajes: Personaje[] = [
       intento: 'aplicó el reglamento al pie de la letra, sin matices',
       reflexion: 'le incomodó descubrir que el orden no siempre coincide con la justicia',
     },
-    imagen: '/personajes/bicarbonato.png',
+    poses: { inicio: '/personajes/bicarbonato.png', problema: '/personajes/bicarbonato.png', intento: '/personajes/bicarbonato.png', resolucion: '/personajes/bicarbonato.png' },
     bio: {
       edad: 'Adulto mayor',
       rol: 'Villano',

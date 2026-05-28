@@ -5,12 +5,13 @@ import { personajes } from '../data/personajes'
 import { lugares } from '../data/lugares'
 import { situaciones } from '../data/situaciones'
 import { generarCuento } from '../lib/generadorCuento'
+import type { CuentoGenerado } from '../lib/generadorCuento'
 import { guardarCuento } from '../lib/almacenamiento'
 import { PasosCuento } from '../components/PasosCuento'
 import { Tarjeta } from '../components/Tarjeta'
 import { BotonPrincipal } from '../components/BotonPrincipal'
 import { ModalPremium } from '../components/ModalPremium'
-import { ControlesAudio } from '../components/ControlesAudio'
+import { CuentoDisplay } from '../components/CuentoDisplay'
 import type { Personaje, Lugar, Situacion } from '../tipos'
 import css from './CrearCuento.module.css'
 
@@ -24,7 +25,7 @@ export function CrearCuento() {
   const [situacion, setSituacion] = useState<Situacion | null>(null)
   const [modalAbierto, setModalAbierto] = useState(false)
   const [itemBloqueado, setItemBloqueado] = useState('')
-  const [cuento, setCuento] = useState('')
+  const [cuento, setCuento] = useState<CuentoGenerado | null>(null)
   const [cargandoCuento, setCargandoCuento] = useState(false)
   const [guardado, setGuardado] = useState(false)
 
@@ -56,19 +57,19 @@ export function CrearCuento() {
   }
 
   const guardar = () => {
-    if (!personaje || !lugar || !situacion) return
+    if (!personaje || !lugar || !situacion || !cuento) return
     guardarCuento({
       personajeId: personaje.id,
       lugarId: lugar.id,
       situacionId: situacion.id,
-      texto: cuento,
+      texto: cuento.texto,
     })
     setGuardado(true)
   }
 
   const reiniciar = () => {
     setPersonaje(null); setLugar(null); setSituacion(null)
-    setCuento(''); setGuardado(false); setPaso(1)
+    setCuento(null); setGuardado(false); setPaso(1)
   }
 
   const volverAtras = () => {
@@ -104,7 +105,7 @@ export function CrearCuento() {
                     key={p.id}
                     titulo={p.nombre}
                     subtitulo={p.arquetipo}
-                    imagen={p.imagen}
+                    imagen={p.poses.inicio}
                     bloqueada={p.premium}
                     onClick={() => elegirPersonaje(p)}
                   />
@@ -155,15 +156,10 @@ export function CrearCuento() {
                   transition={{ repeat: Infinity, duration: 1.4, ease: 'linear' }}
                 >🌀</motion.span>
               </div>
-            ) : (
+            ) : cuento ? (
               <>
                 <h2 className={css.titulo}>Tu cuento</h2>
-                <div className={css.cuento}>
-                  <p className={css.cuentoTexto}>{cuento}</p>
-                  <div style={{ marginTop: 20, display: 'flex', justifyContent: 'center' }}>
-                    <ControlesAudio texto={cuento} autoIniciar />
-                  </div>
-                </div>
+                <CuentoDisplay personaje={personaje!} cuento={cuento} autoIniciarNarrador />
                 <div className={css.controles}>
                   <BotonPrincipal variante="secundario" onClick={() => navegar('/menu')}>
                     🏠 Menú
@@ -174,7 +170,7 @@ export function CrearCuento() {
                   <BotonPrincipal onClick={reiniciar}>✨ Crear otro</BotonPrincipal>
                 </div>
               </>
-            )
+            ) : null
           )}
         </motion.div>
       </AnimatePresence>

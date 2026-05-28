@@ -12,7 +12,12 @@ const personajeMock: Personaje = {
     intento: 'contó un chiste',
     reflexion: 'aprendió a reír',
   },
-  imagen: '/personajes/limon.png',
+  poses: {
+    inicio: '/x/inicio.png',
+    problema: '/x/problema.png',
+    intento: '/x/intento.png',
+    resolucion: '/x/resolucion.png',
+  },
   bio: {} as never,
   premium: false,
 }
@@ -35,28 +40,36 @@ const situacionMock: Situacion = {
 }
 
 describe('generarCuento', () => {
-  it('incluye los 4 actos identificables', () => {
+  it('incluye los 4 actos identificables en el texto', () => {
     const cuento = generarCuento(personajeMock, lugarMock, situacionMock)
-    expect(cuento).toContain('Limón')
-    expect(cuento).toContain('verde con boina')
-    expect(cuento).toContain('paseaba alegre')
-    expect(cuento).toContain('el huerto soleado')
-    expect(cuento).toContain('Entre las matas, algo pasó.')
-    expect(cuento).toContain('apareció alguien nuevo')
-    expect(cuento).toContain('contó un chiste')
-    expect(cuento).toContain('Aprendieron a aceptarlo.')
-    expect(cuento).toContain('aprendió a reír')
+    expect(cuento.texto).toContain('Limón')
+    expect(cuento.texto).toContain('verde con boina')
+    expect(cuento.texto).toContain('paseaba alegre')
+    expect(cuento.texto).toContain('el huerto soleado')
+    expect(cuento.texto).toContain('Entre las matas, algo pasó.')
+    expect(cuento.texto).toContain('apareció alguien nuevo')
+    expect(cuento.texto).toContain('contó un chiste')
+    expect(cuento.texto).toContain('Aprendieron a aceptarlo.')
+    expect(cuento.texto).toContain('aprendió a reír')
   })
 
-  it('devuelve un string no vacío con al menos 4 párrafos', () => {
+  it('devuelve exactamente 4 actos', () => {
     const cuento = generarCuento(personajeMock, lugarMock, situacionMock)
-    const parrafos = cuento.split(/\n\s*\n/).filter(p => p.trim().length > 0)
-    expect(parrafos.length).toBeGreaterThanOrEqual(4)
+    expect(cuento.actos).toHaveLength(4)
+    cuento.actos.forEach(acto => {
+      expect(acto.length).toBeGreaterThan(0)
+    })
+  })
+
+  it('el texto combinado coincide con actos.join("\\n\\n")', () => {
+    const cuento = generarCuento(personajeMock, lugarMock, situacionMock)
+    expect(cuento.texto).toBe(cuento.actos.join('\n\n'))
   })
 
   it('es determinista para los mismos inputs', () => {
     const a = generarCuento(personajeMock, lugarMock, situacionMock)
     const b = generarCuento(personajeMock, lugarMock, situacionMock)
-    expect(a).toBe(b)
+    expect(a.texto).toBe(b.texto)
+    expect(a.actos).toEqual(b.actos)
   })
 })

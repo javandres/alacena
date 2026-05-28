@@ -20,6 +20,13 @@ export type BioPersonaje = {
   haraParaObtenerlo: string
 }
 
+export type PosesPersonaje = {
+  inicio: string       // PNG path used in Tarjeta + acto 1
+  problema: string     // acto 2
+  intento: string      // acto 3
+  resolucion: string   // acto 4
+}
+
 export type Personaje = {
   id: string
   nombre: string
@@ -30,7 +37,7 @@ export type Personaje = {
     intento: string
     reflexion: string
   }
-  imagen: string
+  poses: PosesPersonaje
   bio: BioPersonaje
   premium: boolean
 }

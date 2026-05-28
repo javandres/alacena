@@ -49,7 +49,7 @@ export function Multiverso() {
                 key={p.id}
                 titulo={p.nombre}
                 subtitulo={p.arquetipo}
-                imagen={p.imagen}
+                imagen={p.poses.inicio}
                 onClick={() => setSeleccionado(p)}
               />
             ))}

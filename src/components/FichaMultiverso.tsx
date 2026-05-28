@@ -6,7 +6,7 @@ type Props = { personaje: Personaje }
 export function FichaMultiverso({ personaje: p }: Props) {
   return (
     <article className={css.ficha}>
-      <img className={css.imagen} src={p.imagen} alt={p.nombre} />
+      <img className={css.imagen} src={p.poses.inicio} alt={p.nombre} />
       <div className={css.cuerpo}>
         <h2 className={css.nombre}>{p.nombre}</h2>
         <div style={{ display: 'flex', gap: 8 }}>

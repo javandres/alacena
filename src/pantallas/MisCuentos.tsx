@@ -3,8 +3,10 @@ import { useNavigate } from 'react-router-dom'
 import { listarCuentos, eliminarCuento } from '../lib/almacenamiento'
 import { personajes } from '../data/personajes'
 import { lugares } from '../data/lugares'
-import { ControlesAudio } from '../components/ControlesAudio'
+import { situaciones } from '../data/situaciones'
+import { generarCuento } from '../lib/generadorCuento'
 import { BotonPrincipal } from '../components/BotonPrincipal'
+import { CuentoDisplay } from '../components/CuentoDisplay'
 import type { CuentoGuardado } from '../tipos'
 import css from './MisCuentos.module.css'
 
@@ -16,6 +18,14 @@ function nombreLugar(id: string) {
 }
 function fechaCorta(iso: string) {
   return new Date(iso).toLocaleDateString('es-EC', { day: 'numeric', month: 'short', year: 'numeric' })
+}
+
+function reconstruirCuento(guardado: CuentoGuardado) {
+  const personaje = personajes.find(p => p.id === guardado.personajeId)
+  const lugar = lugares.find(l => l.id === guardado.lugarId)
+  const situacion = situaciones.find(s => s.id === guardado.situacionId)
+  if (!personaje || !lugar || !situacion) return null
+  return { personaje, cuento: generarCuento(personaje, lugar, situacion) }
 }
 
 export function MisCuentos() {
@@ -44,13 +54,18 @@ export function MisCuentos() {
       </div>
 
       {seleccionado ? (
-        <div className={css.detalle}>
-          <p className={css.detalleTexto}>{seleccionado.texto}</p>
-          <div style={{ marginTop: 20, display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
-            <ControlesAudio texto={seleccionado.texto} autoIniciar />
-            <BotonPrincipal variante="secundario" onClick={() => setSeleccionado(null)}>← Volver a la lista</BotonPrincipal>
-          </div>
-        </div>
+        (() => {
+          const recon = reconstruirCuento(seleccionado)
+          if (!recon) return <p>No se pudo reconstruir el cuento.</p>
+          return (
+            <div className={css.detalle}>
+              <CuentoDisplay personaje={recon.personaje} cuento={recon.cuento} autoIniciarNarrador />
+              <div style={{ marginTop: 20, display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
+                <BotonPrincipal variante="secundario" onClick={() => setSeleccionado(null)}>← Volver a la lista</BotonPrincipal>
+              </div>
+            </div>
+          )
+        })()
       ) : cuentos.length === 0 ? (
         <div className={css.vacio}>
           <div className={css.vacioIcono}>📖</div>
