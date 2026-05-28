@@ -1,0 +1,17 @@
+services:
+  web:
+    build: .
+    container_name: alacena-web
+    restart: unless-stopped
+    networks:
+      - ubica_network
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost/"]
+      interval: 30s
+      timeout: 10s
+      start_period: 15s
+      retries: 3
+
+networks:
+  ubica_network:
+    external: true

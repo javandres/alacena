@@ -28,3 +28,15 @@ npm run dev      # servidor local
 npm run build    # build de producción
 npm run test:run # tests
 ```
+
+## Docker Compose
+
+Requiere la red externa `ubica_network` (Nginx Proxy Manager u otro reverse proxy en esa red).
+
+```bash
+docker compose up -d --build
+```
+
+En Proxy Manager, apunta el host al contenedor **`alacena-web`** puerto **80** (red `ubica_network`).
+
+Para probar en local sin proxy, añade temporalmente `ports: ["8080:80"]` al servicio `web`.
