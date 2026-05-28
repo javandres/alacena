@@ -159,7 +159,7 @@ export function CrearCuento() {
             ) : cuento ? (
               <>
                 <h2 className={css.titulo}>Tu cuento</h2>
-                <CuentoDisplay personaje={personaje!} cuento={cuento} autoIniciarNarrador />
+                <CuentoDisplay personaje={personaje!} lugar={lugar!} cuento={cuento} autoIniciarNarrador />
                 <div className={css.controles}>
                   <BotonPrincipal variante="secundario" onClick={() => navegar('/menu')}>
                     🏠 Menú

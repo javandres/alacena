@@ -25,7 +25,7 @@ function reconstruirCuento(guardado: CuentoGuardado) {
   const lugar = lugares.find(l => l.id === guardado.lugarId)
   const situacion = situaciones.find(s => s.id === guardado.situacionId)
   if (!personaje || !lugar || !situacion) return null
-  return { personaje, cuento: generarCuento(personaje, lugar, situacion) }
+  return { personaje, lugar, cuento: generarCuento(personaje, lugar, situacion) }
 }
 
 export function MisCuentos() {
@@ -59,7 +59,7 @@ export function MisCuentos() {
           if (!recon) return <p>No se pudo reconstruir el cuento.</p>
           return (
             <div className={css.detalle}>
-              <CuentoDisplay personaje={recon.personaje} cuento={recon.cuento} autoIniciarNarrador />
+              <CuentoDisplay personaje={recon.personaje} lugar={recon.lugar} cuento={recon.cuento} autoIniciarNarrador />
               <div style={{ marginTop: 20, display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
                 <BotonPrincipal variante="secundario" onClick={() => setSeleccionado(null)}>← Volver a la lista</BotonPrincipal>
               </div>
